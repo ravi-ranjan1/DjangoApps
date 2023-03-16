@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if messages %}
+<ul class="messages" style="background-color:#ccc">
+  {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+      {{ message }}
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<H2>List of Blogs:</H2>
+{% for blog in blogs %}
+<li><a href="{% url 'blog:view_blog' blog_id=blog.id %}">  {{blog.content}} </a> </li>
+    
+{% endfor %}
+
+{% endblock %}

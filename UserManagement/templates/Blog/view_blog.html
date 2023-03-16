@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Blog's Details:</h2>
+<H1>{{blogs.id}}</H1>
+
+{{blogs.content|safe}}
+
+{% endblock %}
